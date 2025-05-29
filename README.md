@@ -89,6 +89,4 @@ curl "https://check.proxyip.cmliussss.net/check?proxyip=example.com:443"
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
 
-
-----
-### 🙏 致谢CMLiu
+### 🙏 致谢[CMLiu](https://github.com/cmliu)
