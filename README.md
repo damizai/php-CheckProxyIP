@@ -1,5 +1,5 @@
 # PHP代理IP检测工具
-
+![PHP-CheckProxyIP](./demo.png)
 ## 简介
 
 这是一个基于PHP开发的Cloudflare代理IP检测工具，可以帮助用户快速验证代理IP的有效性，并提供简洁的API接口。
@@ -27,4 +27,68 @@
 3. 修改[index.php](cci:7://file:///c:/Users/BiuXin/Desktop/Files/index.php:0:0-0:0)中的`$cfphptoken`变量
 4. 确保PHP版本≥7.4，并开启curl扩展
 
-### 感谢CMLiu
+## 📝 使用方法
+
+### 网页界面
+
+直接访问你的 PHP 部署好的 地址，使用友好的网页界面进行检测：
+
+```
+https://check.liushen.pp.ua
+```
+
+### API 接口
+
+#### 🔗 检查单个 ProxyIP
+
+```bash
+# 检查带端口的 IP
+curl "https://check.liushen.pp.ua/index.php?path=check&proxyip=1.2.3.4:443"
+
+# 检查不带端口的 IP（默认使用443端口）
+curl "https://check.liushen.pp.ua/index.php?path=check&proxyip=1.2.3.4"
+
+# 检查 IPv6 地址
+curl "https://check.liushen.pp.ua/index.php?path=check&proxyip=[2001:db8::1]:443"
+
+# 检查域名
+curl "https://check.liushen.pp.ua/index.php?path=check&proxyip=example.com:443"
+```
+
+#### 📄 响应格式
+
+```json
+{
+  "success": true,
+  "proxyIP": "1.2.3.4",
+  "portRemote": 443,
+  "statusCode": 400,
+  "responseSize": 1234,
+  "timestamp": "2025-01-20T10:30:00.000Z"
+}
+```
+
+#### 🔧 参数说明
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `proxyip` | string | ✅ | 要检测的代理IP地址，支持IPv4、IPv6和域名 |
+
+#### 📊 响应字段
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `success` | boolean | 代理IP是否可用 |
+| `proxyIP` | string | 检测的IP地址（失败时为 -1） |
+| `portRemote` | number | 使用的端口号（失败时为 -1） |
+| `statusCode` | number | HTTP状态码 |
+| `responseSize` | number | 响应数据大小（字节） |
+| `timestamp` | string | 检测时间戳 |
+
+## 📄 许可证
+
+本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+
+#### 🙏 致谢
+
+- [CMLiu](https://github.com/cmliu)
