@@ -1,92 +1,30 @@
-# 🌐 CF-Workers-CheckProxyIP
-![CF-Workers-CheckProxyIP](./demo.png)
-> 基于 Cloudflare Workers 的高性能 ProxyIP 验证服务
+# PHP代理IP检测工具
 
-[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-orange?style=flat-square&logo=cloudflare)](https://workers.cloudflare.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/cmliu/CF-Workers-CheckProxyIP?style=flat-square)](https://github.com/cmliu/CF-Workers-CheckProxyIP)
+## 简介
 
-## 📖 项目简介
+这是一个基于PHP开发的Cloudflare代理IP检测工具，可以帮助用户快速验证代理IP的有效性，并提供简洁的API接口。
 
-CF-Workers-CheckProxyIP 是一个部署在 Cloudflare Workers 上的轻量级 ProxyIP 验证工具。它能够快速、准确地检测代理IP的可用性，帮助用户筛选出有效的代理服务器。
+## 功能特点
 
-### ✨ 主要特性
+- ✅ 验证Cloudflare代理IP有效性
+- 🔍 域名解析与批量IP检测
+- 🌐 IP地理位置信息查询
+- 🌓 支持暗色/亮色模式切换
 
-- 🚀 **高性能**：基于 Cloudflare Workers 边缘计算，全球低延迟
-- 🔍 **智能检测**：自动识别IPv4/IPv6地址和域名
-- 🌍 **全球部署**：利用 Cloudflare 全球网络，就近检测
-- 📱 **响应式界面**：支持桌面和移动设备访问
-- ⚡ **实时结果**：秒级响应，即时获取检测结果
-- 🔒 **安全可靠**：无需存储用户数据，保护隐私安全
+## 部署方法
 
-## 🚀 部署方式
+### 方法一：传统虚拟主机部署
 
-- **Workers** 部署：复制 [_worker.js](https://github.com/cmliu/CF-Workers-CheckProxyIP/blob/main/_worker.js) 代码，保存并部署即可
-- **Pages** 部署：`Fork` 后 `连接GitHub` 一键部署即可
+1. 下载[index.php](cci:7://file:///c:/Users/BiuXin/Desktop/Files/index.php:0:0-0:0)和[proxyip.php](cci:7://file:///c:/Users/BiuXin/Desktop/Files/proxyip.php:0:0-0:0)文件
+2. 上传到您的虚拟主机网站根目录
+3. 修改[index.php](cci:7://file:///c:/Users/BiuXin/Desktop/Files/index.php:0:0-0:0)中的`$cfphptoken`变量
+4. 通过浏览器访问您的网站
 
-## 📝 使用方法
+### 方法二：宝塔面板部署
 
-### 网页界面
+1. 登录宝塔面板，创建站点
+2. 上传[index.php](cci:7://file:///c:/Users/BiuXin/Desktop/Files/index.php:0:0-0:0)和[proxyip.php](cci:7://file:///c:/Users/BiuXin/Desktop/Files/proxyip.php:0:0-0:0)到网站根目录
+3. 修改[index.php](cci:7://file:///c:/Users/BiuXin/Desktop/Files/index.php:0:0-0:0)中的`$cfphptoken`变量
+4. 确保PHP版本≥7.4，并开启curl扩展
 
-直接访问你的 Worker 地址，使用友好的网页界面进行检测：
-
-```
-https://check.proxyip.cmliussss.net
-```
-
-### API 接口
-
-#### 🔗 检查单个 ProxyIP
-
-```bash
-# 检查带端口的 IP
-curl "https://check.proxyip.cmliussss.net/check?proxyip=1.2.3.4:443"
-
-# 检查不带端口的 IP（默认使用443端口）
-curl "https://check.proxyip.cmliussss.net/check?proxyip=1.2.3.4"
-
-# 检查 IPv6 地址
-curl "https://check.proxyip.cmliussss.net/check?proxyip=[2001:db8::1]:443"
-
-# 检查域名
-curl "https://check.proxyip.cmliussss.net/check?proxyip=example.com:443"
-```
-
-#### 📄 响应格式
-
-```json
-{
-  "success": true,
-  "proxyIP": "1.2.3.4",
-  "portRemote": 443,
-  "statusCode": 400,
-  "responseSize": 1234,
-  "timestamp": "2025-01-20T10:30:00.000Z"
-}
-```
-
-#### 🔧 参数说明
-
-| 参数 | 类型 | 必填 | 说明 |
-|------|------|------|------|
-| `proxyip` | string | ✅ | 要检测的代理IP地址，支持IPv4、IPv6和域名 |
-
-#### 📊 响应字段
-
-| 字段 | 类型 | 说明 |
-|------|------|------|
-| `success` | boolean | 代理IP是否可用 |
-| `proxyIP` | string | 检测的IP地址（失败时为 -1） |
-| `portRemote` | number | 使用的端口号（失败时为 -1） |
-| `statusCode` | number | HTTP状态码 |
-| `responseSize` | number | 响应数据大小（字节） |
-| `timestamp` | string | 检测时间戳 |
-
-## 📄 许可证
-
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
-
-## 🙏 致谢
-
-- [Cloudflare Workers](https://workers.cloudflare.com/) - 提供强大的边缘计算平台
-- 所有贡献者和使用者的支持
+### 感谢CMLiu
