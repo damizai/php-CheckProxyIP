@@ -31,7 +31,7 @@
 
 ### 网页界面
 
-直接访问你的 Worker 地址，使用友好的网页界面进行检测：
+直接访问你的 PHP 部署好的 地址，使用友好的网页界面进行检测：
 
 ```
 https://check.liushen.pp.ua
@@ -89,4 +89,6 @@ curl "https://check.proxyip.cmliussss.net/check?proxyip=example.com:443"
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
 
-### 🙏 致谢[CMLiu](https://github.com/cmliu)
+#### 🙏 致谢
+
+- [CMLiu](https://github.com/cmliu)
