@@ -43,16 +43,16 @@ https://check.liushen.pp.ua
 
 ```bash
 # 检查带端口的 IP
-curl "https://check.proxyip.cmliussss.net/check?proxyip=1.2.3.4:443"
+curl "https://check.liushen.pp.ua/index.php?path=check&proxyip=1.2.3.4:443"
 
 # 检查不带端口的 IP（默认使用443端口）
-curl "https://check.proxyip.cmliussss.net/check?proxyip=1.2.3.4"
+curl "https://check.liushen.pp.ua/index.php?path=check&proxyip=1.2.3.4"
 
 # 检查 IPv6 地址
-curl "https://check.proxyip.cmliussss.net/check?proxyip=[2001:db8::1]:443"
+curl "https://check.liushen.pp.ua/index.php?path=check&proxyip=[2001:db8::1]:443"
 
 # 检查域名
-curl "https://check.proxyip.cmliussss.net/check?proxyip=example.com:443"
+curl "https://check.liushen.pp.ua/index.php?path=check&proxyip=example.com:443"
 ```
 
 #### 📄 响应格式
