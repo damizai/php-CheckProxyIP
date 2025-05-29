@@ -642,7 +642,7 @@ curl "https://<?php echo $hostname; ?>/index.php?path=check&proxyip=1.2.3.4:443"
       </div>
     </div>
     <footer class="footer">
-      <p style="margin-top: 8px; opacity: 0.8;">© 2025 Check ProxyIP - 基于 PHP 构建的高性能 ProxyIP 验证服务 | 由 <strong>cmliu</strong> 开发</p>
+      <p style="margin-top: 8px; opacity: 0.8;">© 2025 Check ProxyIP - 基于 PHP 构建的高性能 ProxyIP 验证服务 | 由 <strong>BiuXin</strong> 更改</p>感谢CMLiu
     </footer>
   </div>
 
