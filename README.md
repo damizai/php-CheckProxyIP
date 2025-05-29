@@ -1,5 +1,5 @@
 # PHP代理IP检测工具
-
+![PHP-CheckProxyIP](./demo.png)
 ## 简介
 
 这是一个基于PHP开发的Cloudflare代理IP检测工具，可以帮助用户快速验证代理IP的有效性，并提供简洁的API接口。
